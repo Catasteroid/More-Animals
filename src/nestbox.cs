@@ -389,6 +389,21 @@ namespace MoreAnimals
                 this.Block = replacementBlock;
             }
         }
+
+        public override void OnBlockBroken(IPlayer byPlayer = null)
+        {
+            if (Api.Side == EnumAppSide.Server)
+            {
+                ItemStack[] drops = GetDrops(Api.World, Pos, byPlayer);
+                Vec3d dropPos = Pos.ToVec3d().Add(0.5, 0.5, 0.5);
+                for (int i = 0; i < drops.Length; i++)
+                {
+                    Api.World.SpawnItemEntity(drops[i], dropPos);
+                }
+            }
+
+            base.OnBlockBroken(byPlayer);
+        }
         
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
         {
