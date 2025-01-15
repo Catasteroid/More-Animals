@@ -372,7 +372,10 @@ namespace MoreAnimals
                     //entity.World.Logger.Notification("We found a valid entity with that chick code, setting _chickNames[num] to the code!");
                     _chickNames[num] = chickAttempt;
                 }
-                //else entity.World.Logger.Notification("chickAttempt was invalid, _chickNames[{0}] not set!",num);
+                else
+                {
+                    Api.Logger.Warning(Block.Code + " tried to add egg with chick code " + chickCode + ", but no such entity is registered");
+                }
             }
             //else entity.World.Logger.Notification("chickcode was null or no chickcode was passed to TryAddEgg, _chickNames[{0}] not set and egg will be infertile!",num);
             
@@ -387,18 +390,22 @@ namespace MoreAnimals
                     //entity.World.Logger.Notification("Matched the entity code! Now get the egg item code for that entity");
                     //entity.World.Logger.Notification("Egg {0} for {1}",_birdeggdictionary[ecode],ecode);
                     _eggNames[num] =_birdeggdictionary[ecode];
-
-                    //_eggNames[i] = _eggItemNames[i];
+                    if (_eggNames[num] == null)
+                    {
+                        Api.Logger.Warning(ecode + " cannot lay egg into " + Block.Code + " because no egg type was found for that entity");
+                    }
                 }
-                //else
-                //{
-                //    entity.World.Logger.Notification("Did not match an egg item code to the entity code!");
-                //}
+                else
+                {
+                    Api.Logger.Warning(ecode + " tried to lay eggs into " + Block.Code + " but was not recognized as a suitable entity");
+                }
             }
             num++;
-            var block = Api.World.GetBlock(new AssetLocation(Block.Code.Domain + ":" +Block.FirstCodePart() + "-" + num + (num > 1 ? "eggs" : "egg")));
+            AssetLocation blockCode = new AssetLocation(Block.Code.Domain + ":" + Block.FirstCodePart() + "-" + num + (num > 1 ? "eggs" : "egg"));
+            var block = Api.World.GetBlock(blockCode);
             if (block == null)
             {
+                Api.Logger.Warning(Block.Code + " tried to increase egg count to block code " + blockCode + ", but no such block is registered");
                 return false;
             }
             //entity.World.Logger.Notification("Current nest contents is {0} eggs, current chick and egg item codes of contents:",num);
@@ -443,7 +450,6 @@ namespace MoreAnimals
                 _timeToIncubate = 0;
                 int eggs = CountEggs();
                 var entitiesSpawned = 0;
-                var entitiesFailed = 0;
                 Random rand = Api.World.Rand;
                 //Api.World.Logger.Notification("_timeToIncubate is smaller than zero, time for eggs to hatch! egg number: {0}, rand: {1}",eggs,rand.ToString());
                 for (int c = 0; c < eggs; c++)
@@ -452,8 +458,7 @@ namespace MoreAnimals
                     AssetLocation chickName = _chickNames[c];
                     if (chickName == null)
                     {
-                        //Api.World.Logger.Notification("_chickNames[{0}] was null! {1}",c,chickName.ToString());
-                        entitiesFailed++;
+                        // Infertile egg
                         continue;    
                     }
                     int generation = _parentGenerations[c];
@@ -461,15 +466,13 @@ namespace MoreAnimals
                     EntityProperties childType = Api.World.GetEntityType(chickName);
                     if (childType == null)
                     {
-                        //Api.World.Logger.Notification("childType {0} was null, either chickName[{1}] ({2}) was weird, broken not a valid entity",childType,c,chickName);
-                        entitiesFailed++;
+                        Api.Logger.Warning(Block.Code + " unable to find entity type for " + chickName);
                         continue;
                     }
                     Entity childEntity = Api.World.ClassRegistry.CreateEntity(childType);
                     if (childEntity == null)
                     {
-                        //Api.World.Logger.Notification("childEntity {0} was null, either the childType {1} (chickName {2}) was weird, broken not a valid entity",childEntity,childType,chickName);
-                        entitiesFailed++;
+                        Api.Logger.Warning(Block.Code + " unable to spawn entity of type " + chickName);
                         continue;
                     }
                     childEntity.ServerPos.SetFrom(new EntityPos(this.Position.X + (rand.NextDouble() - 0.5f) / 5f, this.Position.Y, this.Position.Z + (rand.NextDouble() - 0.5f) / 5f, (float) rand.NextDouble() * GameMath.TWOPI));
@@ -486,7 +489,7 @@ namespace MoreAnimals
                     entitiesSpawned++;
                 }
 
-                //Api.World.Logger.Notification("Finished spawning entities, {0} were spawned of {1} eggs, {2} spawnings failed",eggs,entitiesSpawned,entitiesFailed);
+                //Api.World.Logger.Notification("Finished spawning entities, {0} were spawned of {1} eggs",entitiesSpawned,eggs);
                 //Exchanges the nest box with the empty variant, this actually deletes any infertile eggs remaining in the box
                 Block replacementBlock = Api.World.GetBlock(new AssetLocation(Block.Code.Domain + ":" + Block.FirstCodePart() + "-empty"));
                 Api.World.BlockAccessor.ExchangeBlock(replacementBlock.Id, this.Pos);
