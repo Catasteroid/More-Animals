@@ -156,59 +156,17 @@ namespace MoreAnimals
         
         public ItemStack[] GetDrops(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1f)
         {
-            //Api.World.Logger.Notification("Doing BlockEntityNestBox GetDrops");
-            var num = _CountEggs();
-            ItemStack emptyBlock = new ItemStack(Api.World.GetBlock(new AssetLocation(Block.Code.Domain + ":" +Block.FirstCodePart() + "-empty"))); 
-            if (num < 1){
-                //Api.World.Logger.Notification("Egg number less than 1 in BlockEntityNestBox GetDrops, returning just the nest box");
-                return new ItemStack[] {};
-            }
-            var goodDrops = 0;
-            AssetLocation[] eggDrops = new AssetLocation[num];
-            for (var i = 0; i < num; i++)
-            {
-                if (_eggNames[i] != null)
-                {
-                    //Api.World.Logger.Notification("Got valid egg drop in getdrops {0}",_eggNames[i].ToString());
-                    eggDrops[i] = _eggNames[i];
-                    goodDrops++;
-                }
-                else
-                {
-                    eggDrops[i] = null;
-                }
-            }
-            if (goodDrops ==0)
-            {
-                //Api.World.Logger.Notification("Less than 1 valid drop in BlockEntityNestBox GetDrops");
-                return new ItemStack[] {};
-            }
-            //Api.World.Logger.Notification("At least 1 valid drop in BlockEntityNestBox GetDrops, let's add them to the array...");
-            var doneDrops = 1;
-            //ItemStack[] toDrop = new ItemStack[goodDrops];
+            var eggCount = _CountEggs();
             List<ItemStack> toDrop = new List<ItemStack>();
-            //toDrop[0] = emptyBlock;
-            for (var i = 0; i < eggDrops.Length; i++)
+            for (var i = 0; i < eggCount; i++)
             {
-                if (eggDrops[i] != null)
-                {
-                    if (Api.World.GetBlock(eggDrops[i]) != null)
-                    {
-                        //Api.World.Logger.Warning("Egg drop code {0} is a valid block for {1} nestbox GetDrops!",eggDrops[i],Block.Code);
-                        toDrop.Add( new ItemStack(Api.World.GetBlock(eggDrops[i]),1));
-                        doneDrops++;
-                    }
-                    else if (Api.World.GetItem(eggDrops[i]) != null)
-                    {
-                        //Api.World.Logger.Warning("Egg drop code {0} is a valid item for {1} nestbox GetDrops!",eggDrops[i],Block.Code);
-                        toDrop.Add( new ItemStack(Api.World.GetItem(eggDrops[i]),1)); 
-                        doneDrops++;
-                    }
-                    else
-                    {
-                        Api.World.Logger.Warning("Failed to resolve drop code {0} for {1} doing nestbox drops",eggDrops[i],Block.Code);
-                    }
+                AssetLocation eggCode = _eggNames[i] ?? AssetLocation.Create("game:egg-chicken-raw");
+                CollectibleObject egg = (CollectibleObject)Api.World.GetBlock(eggCode) ?? (CollectibleObject)Api.World.GetItem(eggCode);
+                if (egg == null) {
+                    Api.World.Logger.Warning("Failed to resolve drop code {0} for {1} doing nestbox drops", eggCode, Block.Code);
+                    continue;
                 }
+                toDrop.Add(new ItemStack(egg, 1));
             }
             return toDrop.ToArray();
         }
@@ -474,7 +432,7 @@ namespace MoreAnimals
                             }
                             else
                             {
-                                dsc.AppendLine("• egg (" + Lang.Get(_chickNames[i].ToString())+ ")");
+                                dsc.AppendLine("• " + Lang.Get("item-egg-chicken-raw"));
                             }
                             
                         }
