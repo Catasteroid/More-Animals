@@ -129,50 +129,6 @@ namespace MoreAnimals
         private double _timeToIncubate;
         private double _occupiedTimeLast;  
         public Entity _occupier;
-
-        /*
-        public override void OnBlockBroken (IPlayer byPlayer = null)
-        {
-            if (Api.World.Side != EnumAppSide.Server) return;
-            var num = CountEggs();
-            
-            ItemStack[] nestboxDrops = GetDrops(Api.World,Block.Position,byPlayer);
-            ItemStack stack = null;
-                //Check it's not just gonna give you a nest box as drops in place of the egg
-                Api.World.Logger.Notification("Nestboxdrops is {0} members long.", nestboxDrops.Length);
-                if (nestboxDrops != null && nestboxDrops.Length > 0)
-                {
-                    Api.World.Logger.Notification("Testing the drops..");
-                    var gooddrops = 0;
-                    //Test the drops to check if they're bad, had problems with null drops working on this
-                    for (var i = 0; i < nestboxDrops.Length; i++)
-                    {
-                        Api.World.Logger.Notification("Drop attempt number {0}",i);
-                        if (nestboxDrops[i] != null)
-                        {
-                            Api.World.Logger.Notification("Item code was valid, attempting to clone item {0}...",i);
-                            stack = nestboxDrops[i].Clone();
-                            Api.World.Logger.Notification("nestboxDrops[{0}] was valid! code: {1}, let's try to give them to the player...",i,nestboxDrops[i]);
-                            if (!byPlayer.InventoryManager.TryGiveItemstack(stack))
-                            {
-                                Api.World.Logger.Notification("Couldn't put item into player's inventory, putting it onto the ground!");
-                                Api.World.SpawnItemEntity(stack, Block.Position.ToVec3d().Add(0.5, 0.5, 0.5));
-                            }
-                            else
-                            {
-                                Api.World.Logger.Notification("Successfully stuffed an item into player's inventory!");
-                            }
-                            gooddrops++;
-                        }
-                        else Api.World.Logger.Notification("nestboxDrops[{0}] was null!",i);
-                    }
-                    if (gooddrops == 0)
-                    {
-                        Api.World.Logger.Notification("All drops were invalid for some reason, fuck this returning false...");
-                    }
-                }
-        }
-        */
         
         public new bool Occupied(Entity entity)
         {
@@ -201,7 +157,7 @@ namespace MoreAnimals
         public ItemStack[] GetDrops(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1f)
         {
             //Api.World.Logger.Notification("Doing BlockEntityNestBox GetDrops");
-            var num = CountEggs();
+            var num = _CountEggs();
             ItemStack emptyBlock = new ItemStack(Api.World.GetBlock(new AssetLocation(Block.Code.Domain + ":" +Block.FirstCodePart() + "-empty"))); 
             if (num < 1){
                 //Api.World.Logger.Notification("Egg number less than 1 in BlockEntityNestBox GetDrops, returning just the nest box");
@@ -289,31 +245,9 @@ namespace MoreAnimals
             if (api.Side == EnumAppSide.Server)
             {
                 api.ModLoader.GetModSystem<POIRegistry>().AddPOI(this);
-                RegisterGameTickListener(On1500msTick, 1500);
+                RegisterGameTickListener(_On1500msTick, 1500);
             }
         }
-
-        /*
-        public AssetLocation[] GetNestContents()
-        {
-            var num = CountEggs();
-            AssetLocation[] eggdrops = new AssetLocation[num];
-            if (num < 1) return eggdrops;
-            for (var i = 0; i < num; i++)
-            {
-                if (_eggNames[i] != null)
-                {
-                    eggdrops[i] = _eggNames[i];
-                }
-                else
-                {
-                    eggdrops[i] = null;
-                }
-                
-            }
-            return eggdrops;
-        }
-        */
 
         public override void ToTreeAttributes(ITreeAttribute tree)
         {
@@ -361,7 +295,7 @@ namespace MoreAnimals
                 return false;
             }
             _timeToIncubate = 0.0;
-            var num = CountEggs();
+            var num = _CountEggs();
             //entity.World.Logger.Notification("TryAddEgg called, currently {0} egg, bird: {1}, chickCode: {2}",num,entity.Code.ToString(),chickCode);
             _parentGenerations[num] = entity.WatchedAttributes.GetInt("generation");
             if (chickCode != null)
@@ -419,15 +353,15 @@ namespace MoreAnimals
             return true;
         }
 
-        private int CountEggs()
+        private int _CountEggs()
         {
             var eggs = Block.LastCodePart()[0];
             var eggReturn = eggs <= '9' && eggs >= '0' ? eggs - '0' : 0;
-            //Api.World.Logger.Notification("Doing CountEggs, Block lastcodepart: {0}, eggs: {1}, eggReturn: {2}",Block.LastCodePart(),eggs,eggReturn);
+            //Api.World.Logger.Notification("Doing _CountEggs, Block lastcodepart: {0}, eggs: {1}, eggReturn: {2}",Block.LastCodePart(),eggs,eggReturn);
             return eggReturn;
         }
         
-        private void On1500msTick(float dt)
+        private void _On1500msTick(float dt)
         {
             if (_timeToIncubate == 0) return;
 
@@ -448,7 +382,7 @@ namespace MoreAnimals
             {
                 
                 _timeToIncubate = 0;
-                int eggs = CountEggs();
+                int eggs = _CountEggs();
                 var entitiesSpawned = 0;
                 Random rand = Api.World.Rand;
                 //Api.World.Logger.Notification("_timeToIncubate is smaller than zero, time for eggs to hatch! egg number: {0}, rand: {1}",eggs,rand.ToString());
@@ -500,7 +434,7 @@ namespace MoreAnimals
         
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
         {
-            int eggCount = CountEggs();
+            int eggCount = _CountEggs();
             int fertileCount = 0;
             //string eggitemstring = "";
             if (eggCount > 0)
