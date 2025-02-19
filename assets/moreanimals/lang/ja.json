@@ -1,0 +1,98 @@
+{
+    "item-handbooktitle-creature-pheasant-*": "保護と飼育",
+    "item-handbooktext-creature-pheasant-*": "キジ、キンケイ、キバシオオライチョウはニワトリと同じように育てます。小さな餌入れから穀物を与えるか、穀物や果物を地面に投げて食べさせますが、地面に卵を産まないので、汎用巣箱を使って産卵するか、同種のみが使用可能な専用の巣を作るか、いずれかの方法で育てます。巣箱に3個の卵を産んだら、キジ、キンケイ、キバシオオライチョウの雌鳥は卵が孵化するまで5日間温める必要あります。キジ、キンケイ、キバシオオライチョウのヒナは7日間で雛になり、雛はさらに7日間で成鳥になり、合計2週間で成鳥になります。",
+
+    "item-creature-pheasant-cock": "キジ(オス)",
+    "item-creature-pheasant-hen": "キジ(メス)",
+    "item-creature-pheasant-chick": "キジ(ヒナ)",
+    "item-creature-pheasant-cockpoult": "家禽キジ",
+    "item-creature-pheasant-henpoult": "家禽キジ",
+    "item-creature-pheasant-cock": "キジ(オス)",
+    "item-creature-pheasant-hen": "キジ(メス)",
+    "item-creature-pheasant-chick": "キジ(ヒナ)",
+    "itemdesc-creature-pheasant-cockpoult": "家禽キジ",
+    "itemdesc-creature-pheasant-henpoult": "家禽キジ",
+    "item-dead-creature-pheasant-cock": "死んだキジ(オス)",
+    "item-dead-creature-pheasant-hen": "死んだキジ(メス)",
+    "item-dead-creature-pheasant-chick": "死んだキジ(ヒナ)",
+    "item-dead-creature-pheasant-cockpoult": "死んだ家禽キジ",
+    "item-dead-creature-pheasant-henpoult": "死んだ家禽キジ",
+
+    "item-creature-goldenpheasant-cock": "キンケイ(オス)",
+    "item-creature-goldenpheasant-hen": "キンケイ(メス)",
+    "item-creature-goldenpheasant-chick": "キンケイ(ヒナ)",
+    "item-creature-goldenpheasant-cockpoult": "家禽キンケイ",
+    "item-creature-goldenpheasant-henpoult": "家禽キンケイ",
+    "itemdesc-creature-goldenpheasant-cock": "キンケイ(オス)",
+    "itemdesc-creature-goldenpheasant-hen": "キンケイ(メス)",
+    "itemdesc-creature-goldenpheasant-chick": "キンケイ(ヒナ)",
+    "itemdesc-creature-goldenpheasant-cockpoult": "家禽キンケイ",
+    "itemdesc-creature-goldenpheasant-henpoult": "家禽キンケイ",
+    "item-dead-creature-goldenpheasant-cock": "死んだキンケイ(オス)",
+    "item-dead-creature-goldenpheasant-hen": "死んだキンケイ(メス)",
+    "item-dead-creature-goldenpheasant-chick": "死んだキンケイ(ヒナ)",
+    "item-dead-creature-goldenpheasant-cockpoult": "死んだ家禽キンケイ",
+    "item-dead-creature-goldenpheasant-henpoult": "死んだ家禽キンケイ",
+
+    "item-creature-capercaillie-cock": "キバシオオライチョウ(オス)",
+    "item-creature-capercaillie-hen": "キバシオオライチョウ(メス)",
+    "item-creature-capercaillie-chick": "キバシオオライチョウ(ヒナ)",
+    "item-creature-capercaillie-cockpoult": "家禽キバシオオライチョウ",
+    "item-creature-capercaillie-henpoult": "家禽キバシオオライチョウ",
+    "itemdesc-creature-capercaillie-cock": "キバシオオライチョウ(オス)",
+    "itemdesc-creature-capercaillie-hen": "キバシオオライチョウ(メス)",
+    "itemdesc-creature-capercaillie-chick": "キバシオオライチョウ(ヒナ)",
+    "itemdesc-creature-capercaillie-cockpoult": "家禽キバシオオライチョウ",
+    "itemdesc-creature-capercaillie-henpoult": "家禽キバシオオライチョウ",
+    "item-dead-creature-capercaillie-cock": "死んだキバシオオライチョウ(オス)",
+    "item-dead-creature-capercaillie-hen": "死んだキバシオオライチョウ(メス)",
+    "item-dead-creature-capercaillie-chick": "死んだキバシオオライチョウ(ヒナ)",
+    "item-dead-creature-capercaillie-cockpoult": "死んだ家禽キバシオオライチョウ",
+    "item-dead-creature-capercaillie-henpoult": "死んだ家禽キバシオオライチョウ",
+    
+	
+	"game:item-creature-pheasant-chick": "キジの幼体",
+	"game:itemdesc-creature-pheasant-chick": "キジの幼体",
+	"game:item-dead-creature-pheasant-chick": "死んだキジの幼体",
+	
+	"game:item-creature-goldenpheasant-chick": "キンケイの幼体",
+	"game:itemdesc-creature-goldenpheasant-chick": "キンケイの幼体",
+	"game:item-dead-creature-goldenpheasant-chick": "死んだキンケイの幼体",
+	
+	"game:item-creature-capercaillie-chick": "キバシオオライチョウの幼体",
+	"game:itemdesc-creature-capercaillie-chick": "キバシオオライチョウの幼体",
+	"game:item-dead-creature-capercaillie-chick": "死んだキバシオオライチョウの幼体",
+	
+	"block-nestbox-empty": "巣箱(空)",
+    "block-nestbox-1egg": "巣箱(卵 x1)",
+    "block-nestbox-2eggs": "巣箱(卵 x2)",
+    "block-nestbox-3eggs": "巣箱(卵 x3)",
+	
+	"block-egg-pheasant-1": "キジの卵",
+	"block-egg-pheasant-2": "キジの卵(2)",
+	"block-egg-pheasant-3": "キジの卵(3)",
+	"block-egg-pheasant-broken": "割れたキジの卵",
+	
+	"block-egg-goldenpheasant-1": "キンケイの卵",
+	"block-egg-goldenpheasant-2": "キンケイの卵(2)",
+	"block-egg-goldenpheasant-3": "キンケイの卵(3)",
+	"block-egg-goldenpheasant-broken": "割れたキンケイの卵",
+	
+	"block-egg-goldenpheasant-1": "キバシオオライチョウの卵",
+	"block-egg-goldenpheasant-2": "キバシオオライチョウの卵(2)",
+	"block-egg-goldenpheasant-3": "キバシオオライチョウの卵(3)",
+	"block-egg-goldenpheasant-broken": "割れたキバシオオライチョウの卵",
+	
+	"item-egg-pheasant-raw": "キジの生卵",
+	"item-egg-goldenpheasant-raw": "キンケイの生卵",
+	"item-egg-capercaillie-raw": "キバシオオライチョウの生卵",
+	
+	"recipeingredient-item-egg-pheasant-raw": "キジの卵",
+	"recipeingredient-item-egg-goldenpheasant-raw": "キンケイの卵",
+	"recipeingredient-item-egg-capercaillie-raw": "キバシオオライチョウの卵",
+	
+	"recipeingredient-item-egg-pheasant-raw-insturmentalcase": "キジの卵",
+	"recipeingredient-item-egg-goldenpheasant-raw-insturmentalcase": "キンケイの卵",
+	"recipeingredient-item-egg-capercaillie-raw-insturmentalcase": "キバシオオライチョウの卵"
+    
+}

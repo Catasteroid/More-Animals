@@ -1,0 +1,29 @@
+[
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/0/foodFor/-", value: "moreanimals:pheasant-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/1/foodFor/-", value: "moreanimals:pheasant-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/2/foodFor/-", value: "moreanimals:pheasant-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/3/foodFor/-", value: "moreanimals:pheasant-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/4/foodFor/-", value: "moreanimals:pheasant-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/5/foodFor/-", value: "moreanimals:pheasant-*", side: "server" },
+  
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/0/foodFor/-", value: "moreanimals:goldenpheasant-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/1/foodFor/-", value: "moreanimals:goldenpheasant-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/2/foodFor/-", value: "moreanimals:goldenpheasant-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/3/foodFor/-", value: "moreanimals:goldenpheasant-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/4/foodFor/-", value: "moreanimals:goldenpheasant-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/5/foodFor/-", value: "moreanimals:goldenpheasant-*", side: "server" },
+  
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/0/foodFor/-", value: "moreanimals:capercaillie-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/1/foodFor/-", value: "moreanimals:capercaillie-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/2/foodFor/-", value: "moreanimals:capercaillie-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/3/foodFor/-", value: "moreanimals:capercaillie-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/4/foodFor/-", value: "moreanimals:capercaillie-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/5/foodFor/-", value: "moreanimals:capercaillie-*", side: "server" },
+  
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/0/foodFor/-", value: "moreanimals:wildturkey-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/1/foodFor/-", value: "moreanimals:wildturkey-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/2/foodFor/-", value: "moreanimals:wildturkey-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/3/foodFor/-", value: "moreanimals:wildturkey-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/4/foodFor/-", value: "moreanimals:wildturkey-*", side: "server" },
+  { file: "game:blocktypes/wood/trough-small.json", op: "add", path: "/attributes/contentConfig/5/foodFor/-", value: "moreanimals:wildturkey-*", side: "server" }
+]

@@ -1,0 +1,10 @@
+[
+	{ file: "game:entities/land/fox.json", op: "add", path: "/server/behaviors/11/aitasks/4/entityCodes/-", value: "pheasant-*", side: "server" },
+	{ file: "game:entities/land/fox.json", op: "add", path: "/server/behaviors/11/aitasks/5/entityCodes/-", value: "pheasant-*", side: "server" },
+	{ file: "game:entities/land/fox.json", op: "add", path: "/server/behaviors/11/aitasks/4/entityCodes/-", value: "goldenpheasant-*", side: "server" },
+	{ file: "game:entities/land/fox.json", op: "add", path: "/server/behaviors/11/aitasks/5/entityCodes/-", value: "goldenpheasant-*", side: "server" },
+	{ file: "game:entities/land/fox.json", op: "add", path: "/server/behaviors/11/aitasks/4/entityCodes/-", value: "capercaillie-*", side: "server" },
+	{ file: "game:entities/land/fox.json", op: "add", path: "/server/behaviors/11/aitasks/5/entityCodes/-", value: "capercaillie-*", side: "server" },
+	{ file: "game:entities/land/fox.json", op: "add", path: "/server/behaviors/11/aitasks/4/entityCodes/-", value: "wildturkey-*", side: "server" },
+	{ file: "game:entities/land/fox.json", op: "add", path: "/server/behaviors/11/aitasks/5/entityCodes/-", value: "wildturkey-*", side: "server" }
+]

@@ -1,0 +1,393 @@
+{
+    code: "goldenpheasant",
+    class: "EntityAgent",
+    variantgroups: [
+        { code: "agegender", states: [ "cock", "cockpoult", "hen", "henpoult" ] }
+    ],
+    hitboxSizeByType: {
+        "*poult": { x: 0.5, y: 0.5 },
+        "*": { x: 0.5, y: 0.6 },
+    },
+    deadHitboxSize: { x: 0.5, y: 0.25 },
+    eyeHeight: 0.5,
+    weightByType: {
+        "*-hen*": 0.8,
+        "*": 1,
+    },
+    attributes: {
+        creatureDiet: {
+            foodCategories: ["Grain"],
+            foodTags: ["fruitmash"]
+        },
+        basketCatchable: true,
+        trapChance: 0.5,
+        trapDestroyChance: 0.01,
+        eggTypes: [ { type: "item", code: "moreanimals:egg-goldenpheasant-raw" } ],
+        handbook: {
+            groupcode: "creaturegroup-goldenpheasant"
+        }
+    },
+    drops: [],
+    client: {
+        renderer: "Shape",
+        shapeByType: {
+            "*-hen*": { base: "moreanimals:entity/land/pheasant-hen" },
+            "*": { base: "moreanimals:entity/land/goldenpheasant-cock" },
+        },
+        textureByType: {
+            "*-hen*": { base: "moreanimals:entity/goldenpheasant/goldenpheasanthen1" },
+            "*": { base: "moreanimals:entity/goldenpheasant/goldenpheasantcock1" },
+        },
+        sizeByType: {
+            "*-henpoult": 0.75,
+            "*-cockpoult": 0.85,
+            "*-hen": 1.2,
+            "*-cock": 1.4,
+        },
+        sizeGrowthFactorByType: {
+            "*-cockpoult": 0.5,
+            "*-henpoult": 0.4,
+        },
+        behaviors: [
+            { code: "repulseagents" }, 
+            { code: "controlledphysics", stepHeight: 1.1251 }, 
+            { code: "floatupwhenstuck", onlyWhenDead: true },
+            { code: "interpolateposition" },
+            { code: "harvestable" },
+            { code: "despawn", minPlayerDistance: 8, belowLightLevel: 8, minSeconds: 300 },
+            { code: "multiplybase", enabledByType: { "*-hen": true, "*": false} },
+            { code: "ropetieable", minGeneration: 2 }
+        ],
+        animations: [
+            {
+                code: "hurt",
+                animation: "hurt", 
+                animationSpeed: 2.2,
+                weight: 10,
+                blendMode: "AddAverage" 
+            },
+            {
+                code: "eat",
+                animation: "eat", 
+                animationSpeed: 1,
+                weight: 1,
+                blendMode: "Add" 
+            },
+            {
+                code: "roostercall",
+                animation: "call", 
+                animationSpeed: 1.3,
+                weight: 10,
+                blendMode: "AddAverage" 
+            },
+            {
+                code: "die",
+                animation: "death", 
+                animationSpeed: 1.25,
+                weight: 10,
+                blendMode: "Average",
+                triggeredBy: { onControls: ["dead"] }
+            },
+            { 
+                code: "idle", 
+                animation: "idle",
+                blendMode: "AddAverage",
+                easeOutSpeed: 4,
+                triggeredBy: { defaultAnim: true }
+            },
+            {
+                code: "sleep", 
+                animation: "sleep",
+                easeInSpeed: 4,
+                easeOutSpeed: 4,
+                blendMode: "Average"
+            },
+            {
+                code: "sit", 
+                animation: "sit",
+                easeInSpeed: 4,
+                easeOutSpeed: 4,
+                blendMode: "Average"
+            }
+        ]
+    },
+    server: {
+        attributes: {
+            pathfinder: {
+                minTurnAnglePerSec: 720,
+                maxTurnAnglePerSec: 1440
+            }
+        },
+        behaviors: [
+            { code: "repulseagents" }, 
+            { code: "controlledphysics", stepHeight: 1.1251 },
+            { code: "despawn", minPlayerDistance: 8, belowLightLevel: 8, minSeconds: 300 },
+            { code: "health", maxhealth: 3 },
+            { code: "deaddecay", hoursToDecay: 96, decayedBlock: "game:carcass-tiny" },
+            { code: "floatupwhenstuck", onlyWhenDead: true },
+            { code: "harvestable", drops: [
+                {
+                    type: "item", 
+                    code: "game:poultry-raw", 
+                    quantityByType: {
+                        "*-henpoult": { avg: 1.5, var: 0.5 },
+                        "*-cockpoult": { avg: 1.8, var: 0.6 },
+                        "*-hen": { avg: 4.25, var: 1.25 },
+                        "*-cock": { avg: 5.25, var: 1.25 },
+                    }
+                },
+                {
+                    type: "item", 
+                    code: "game:feather", 
+                    quantityByType: {
+                        "*-henpoult": { avg: 12, var: 8 },
+                        "*-cockpoult": { avg: 14, var: 8 },
+                        "*-hen": { avg: 24, var: 8 },
+                        "*-cock": { avg: 24, var: 8 },
+                    }
+                }
+                ]
+            },
+            { code: "grow", hoursToGrow: 168, adultEntityCodesByType: { "*-cockpoult": ["moreanimals:goldenpheasant-cock"],  "*-henpoult": ["moreanimals:goldenpheasant-hen"]}, enabledByType: { "*poult": true, "*": false } },  
+          {
+                code: "multiplybase",
+                multiplyCooldownDaysMin: 0,
+                multiplyCooldownDaysMax: 4,
+                portionsEatenForMultiply: 4,
+                enabledByType: { "*-hen": true, "*": false}
+            },
+            { code: "breathe" },
+            { 
+                code: "emotionstates",
+                states: [
+                    {
+                        code: "aggressiveondamage",
+                        duration: 20, 
+                        chanceByType: {"*poult": 0.2, "*": 0.4 },
+                        slot: 0,
+                        priority: 2,
+                        accumType: "noaccum",
+                        enabledByType: { "*-cock*": true, "*": false}
+                    },
+                    { code: "fleeondamage", duration: 10, chance: 1, slot: 0, priority: 1, accumType: "max", enabledByType: { "*-cock*": true, "*": false} },
+                    { code: "alarmherdondamage", chance: 1, slot: 1, priority: 1, accumType: "max", enabledByType: { "*-cock*": false } }
+                ]
+            },
+            { 
+                code: "taskai",
+                aitasks: [    
+                    {
+                        code: "meleeattack",
+                        entityCodes: ["player", "bear-*", "fox-*", "hyena-*", "wolf-*", "caninae-*", "felinae-*", "machairodontinae-*", "pantherinae-*", "ursidae-*", "varanus-*", "puma-*", "tiger-*", "komododragon", "crocodile"],
+                        priority: 2,
+                        damage: 0.25,
+                        mincooldown: 2500, 
+                        maxcooldown: 3500, 
+                        attackDurationMs: 2000,
+                        damagePlayerAtMs: 600,
+                        animation: "Attack",
+                        animationSpeed: 1.5,
+                        damageType: "PiercingAttack",
+                        whenInEmotionState: "aggressiveondamage",
+                        sound: "goldenpheasant/goldenpheasantcock2",
+                        enabledByType: { "*-cock": true, "*": false},
+                    },
+                    {
+                        code: "fleeentity",
+                        entityCodes: ["player", "bear-*", "fox-*", "hyena-*", "wolf-*", "caninae-*", "felinae-*", "machairodontinae-*", "pantherinae-*", "ursidae-*", "varanus-*", "puma-*", "tiger-*", "komododragon", "crocodile"],
+                        priority: 1.8,
+                        movespeedByType: { "*-cock": 0.041, "*": 0.037 },
+                        animationSpeed: 2.4,
+                        seekingRange: 10,
+                        animation: "Run",
+                        sound: "goldenpheasant/goldenpheasantcock2",
+                        whenInEmotionState: "fleeondamage"
+                    },
+                    {
+                        code: "seekentity",
+                        priority: 1.7,
+                        mincooldown: 1000, 
+                        maxcooldown: 1500, 
+                        seekingRange: 25,
+                        movespeedByType: { "*-cock": 0.037, "*": 0.033 },
+                        animation: "Run2",
+                        animationSpeed: 2,
+                        whenInEmotionState: "aggressiveondamage",
+                        sound: "goldenpheasant/goldenpheasantcock1",
+                        enabledByType: { "*-cock": true, "*": false},
+                    },
+                    {
+                        code: "fleeentity",
+                        entityCodes: ["player", "bear-*", "fox-*", "hyena-*", "wolf-*", "caninae-*", "felinae-*", "machairodontinae-*", "pantherinae-*", "ursidae-*", "varanus-*", "puma-*", "tiger-*", "komododragon", "crocodile"],
+                        priority: 1.5,
+                        movespeedByType: { "*-cock": 0.041, "*": 0.037 },
+                        seekingRange: 10,
+                        animation: "Run",
+                        animationSpeed: 2.4,
+                        sound: "goldenpheasant/goldenpheasantcock2"
+                    },
+                    {
+                        code: "getoutofwater",
+                        priority: 1.4,
+                        movespeed: 0.02,
+                        animation: "Run"
+                    },
+                    {
+                        code: "seekblockandlay",
+                        priority: 1.36,
+                        layTime: 5,
+                        chickCode: "moreanimals:goldenpheasant-chick",
+                        sitDays: 0.9,
+                        incubationDays: 5,
+                        movespeed: 0.006,
+                        animation: "Walk",
+                        mincooldownHours: 1,
+                        maxcooldownHours: 2,
+                        sitAnimation: "Sit",
+                        requiresNearbyEntityCode: "moreanimals:goldenpheasant-cock",
+                        requiresNearbyEntityRange: 18,
+                        failBlockCode: "moreanimals:egg-goldenpheasant-1",
+                        sound: "moreanimals:capercaillie/goldenpheasanthen1",
+                        enabledByType: { "*-hen": true, "*": false },
+                    },
+                    {
+                        code: "seekfoodandeat",
+                        priority: 1.32,
+                        seekingRange: 18,
+                        eatSound: "game:player/eat",
+                        eatTime: 1.5,
+                        eatAnimation: "Eat",
+                        eatLooseItems: true,
+                        eatItemCategories: ["Grain", "Vegetable", "Fruit"],
+                        movespeed: 0.0065,
+                        animation: "Walk",
+                        mincooldownHours: 1,
+                        maxcooldownHours: 4
+                    },
+                    {
+                        code: "stayclosetoentity",
+                        priority: 1.3,
+                        entityCode: "goldenpheasant-cock",
+                        movespeed: 0.015,
+                        maxDistance: 5,
+                        searchRange: 12,
+                        animation: "Run",
+                        enabledByType: { "*-cock*": false },
+                    },
+                    {
+                        code: "idle",
+                        priority: 1.27,
+                        minduration: 5000000,
+                        maxduration: 5000000,
+                        mincooldown: 5000,
+                        maxcooldown: 15000,
+                        priorityForCancel: 1.38,
+                        animation: "Sleep",
+                        whenNotInEmotionState: "aggressiveondamage",
+                        duringDayTimeFrames: [ { fromHour: 20, toHour: 24 }, { fromHour: 0, toHour: 6 } ],
+                        stopOnNearbyEntityCodes: ["player", "bear-*", "fox-*", "hyena-*", "wolf-*", "caninae-*", "felinae-*", "machairodontinae-*", "pantherinae-*", "ursidae-*", "varanus-*", "puma-*", "tiger-*", "komododragon", "crocodile"],
+                        stopRange: 8,
+                        stopOnHurt: true
+                    },                    
+                    {
+                        code: "idle",
+                        priority: 1.25,
+                        minduration: 3120,
+                        maxduration: 3120,
+                        mincooldown: 50000,
+                        maxcooldown: 400000,
+                        animation: "RoosterCall",
+                        animationSpeed: 1.5,
+                        sound: "goldenpheasant/goldenpheasantcock1",
+                        soundRange: 48,
+                        priorityForCancel: 1.35,
+                        enabledByType: { "*-cock*": true, "*": false},
+                    },                    
+                    {
+                        code: "idle",
+                        priority: 1.2,
+                        minduration: 2500,
+                        maxduration: 2500,
+                        mincooldown: 1000,
+                        maxcooldown: 10000,
+                        priorityForCancel: 1.29,
+                        animation: "Eat"
+                    },
+                    {
+                        code: "idle",
+                        priority: 1.1,
+                        minduration: 1000,
+                        maxduration: 3000,
+                        mincooldown: 2000,
+                        maxcooldown: 30000,
+                        priorityForCancel: 1.29,
+                        animation: "Idle"
+                    },
+                    {
+                        code: "wander", 
+                        priority: 1.0, 
+                        movespeed: 0.006,
+                        animation: "Walk",
+                        wanderChance: 0.02,
+                        preferredLightLevel: 19
+                    },
+                    {
+                        code: "idle",
+                        priority: 0.9,
+                        minduration: 6000,
+                        maxduration: 40000,
+                        mincooldown: 2000,
+                        maxcooldown: 120000,
+                        priorityForCancel: 1.29,
+                        animation: "Sit"
+                    },                    
+                    { 
+                        code: "lookaround", 
+                        priority: 0.5
+                    }
+                ]
+            },
+            { code: "ropetieable", minGeneration: 2 }
+        ],
+        spawnconditionsByType: { "*-cock": {
+            worldgen: {
+                TriesPerChunk: { avg: 0.1, var: 0 },
+                tryOnlySurface: true,
+                minLightLevel: 12,
+                groupSize: { dist: "verynarrowgaussian", avg: 4, var: 5 },
+                insideBlockCodes: ["game:air", "game:tallgrass-*"],
+                minTemp: 24,
+                minRain: 0.32,
+                minForestOrShrubs: 0.4,
+                companions: ["goldenpheasant-hen", "goldenpheasant-chick"]
+            },
+            runtime: {
+                group: "passive",
+                tryOnlySurface: true,
+                chance: 0.001,
+                maxQuantity: 4,
+                minLightLevel: 12,
+                groupSize: { dist: "verynarrowgaussian", avg: 4, var: 5 },
+                insideBlockCodes: ["game:air", "game:tallgrass-*"],
+                minTemp: 24,
+                minRain: 0.32,
+                minForestOrShrubs: 0.4,
+                companions: ["goldenpheasant-hen", "goldenpheasant-chick"]
+            }
+        }}
+    },
+    soundsByType: {
+        "*-hen*": {
+            hurt: "goldenpheasant/goldenpheasanthen2",
+            death: "goldenpheasant/goldenpheasanthen2",
+            idle: "goldenpheasant/goldenpheasanthen1"
+        },
+        "*": {
+            hurt: "goldenpheasant/goldenpheasantcock*",
+            death: "goldenpheasant/goldenpheasantcock*",
+            idle: "goldenpheasant/goldenpheasantcock*"
+        }
+    },
+    idleSoundRange: 28,
+    idleSoundChance: 0.05
+}

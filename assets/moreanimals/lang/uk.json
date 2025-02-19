@@ -1,0 +1,149 @@
+{
+    "item-handbooktitle-creature-pheasant-*": "Догляд та вирощування",
+    "item-handbooktext-creature-pheasant-*":
+    "Фазанів, золотих фазанів, глухарів і диких індиків вирощують так само, як курей.
+    Ви можете годувати їх зерном із невеликих корит або кидати зерно чи фрукти на землю.
+   
+    Для отримання яєць створіть сідало щоб птиці почали нестися, або вони будуватимуть власне гніздо, яке може використовувати лише їхній вид.
+   
+    Пташенята дозрівають протягом семи днів, а потім ще сім днів перетворюються на молодих птахів, загалом вони виростають за два тижні.",
+
+    "handbooktitle-henbox": "Використання",
+    "handbooktext-henbox": "Поставте гніздо на вільне місце біля птахів. Підказка для гнізда покаже, які види птахів можуть його використовувати. Зазвичай до них входять кури, фазани, золоті фазани, глухарі та індики, але воно може підтримувати більше птахів, якщо встановлені моди, що вводять додаткових види. Птахи будуть віддавати перевагу відкладанню яєць у гнізді, якщо воно є, а не на землі. Як тільки у гнізді накопичиться 3 яйця, самка почне інкубувати їх, поки вони не вилупляться. Яйця можуть бути різних видів, але навіть так успішно вилуплюватимуться. Важливо, щоб інкубатор відповідав потребам яєць у гнізді, а не конкретному виду самки, для успішного висиджування.<br><br>Для живих яєць самкам необхідний доступ до самця того ж виду! Птахи повинні бути <a href=\"handbook://block-trough-genericwood-small-ns\">ситі</a>, щоб нести яйця!
+<br><br>Якщо всі гнізда зайняті, самки, які хочуть відкласти яйце, але не можуть знайти вільного гнізда, почнуть нестись на землю, де їх можна буде зібрати. Гравець також може збирати яйця з гнізда, натиснувши <icon>rightmousebutton</icon>. Яйця, які відкладаються на землі, ніколи не будуть заплідненими, отже, ніколи не вилупляться.",
+
+    "game:creaturegroup-capercaillie": "Глухар",
+    "game:creaturegroup-goldenpheasant": "Золотий фазан",
+    "game:creaturegroup-pheasant": "Фазан",
+    "game:creaturegroup-wildturkey": "Дикий індик",
+  
+    "item-creature-pheasant-cock": "Фазан",
+    "item-creature-pheasant-hen": "Самка фазана",
+    "item-creature-pheasant-chick": "Пташеня фазана",
+    "item-creature-pheasant-cockpoult": "Молодий фазан",
+    "item-creature-pheasant-henpoult": "Молода самка фазана",
+    "itemdesc-creature-pheasant-cock": "Фазан",
+    "itemdesc-creature-pheasant-hen": "Самка фазана",
+    "itemdesc-creature-pheasant-chick": "Пташеня фазана",
+    "itemdesc-creature-pheasant-cockpoult": "Молодий фазан",
+    "itemdesc-creature-pheasant-henpoult": "Молода самка фазана",
+    "item-dead-creature-pheasant-cock": "Мертвий півень фазана",
+    "item-dead-creature-pheasant-hen": "Мертва Самка фазана",
+    "item-dead-creature-pheasant-chick": "Мертве пташеня фазана",
+    "item-dead-creature-pheasant-cockpoult": "Мертвий молодий півень фазана",
+    "item-dead-creature-pheasant-henpoult": "Мертва молода Самка фазана",
+  
+    "item-creature-goldenpheasant-cock": "Золотий фазан",
+    "item-creature-goldenpheasant-hen": "Самка золотого фазана",
+    "item-creature-goldenpheasant-chick": "Пташеня золотого фазана",
+    "item-creature-goldenpheasant-cockpoult": "Молодий золотий фазан",
+    "item-creature-goldenpheasant-henpoult": "Молода самка золотого фазана",
+    "itemdesc-creature-goldenpheasant-cock": "Золотий фазан",
+    "itemdesc-creature-goldenpheasant-hen": "Самка золотого фазана",
+    "itemdesc-creature-goldenpheasant-chick": "Пташеня золотого фазана",
+    "itemdesc-creature-goldenpheasant-cockpoult": "Молодий золотий фазан",
+    "itemdesc-creature-goldenpheasant-henpoult": "Молода самка золотого фазана",
+    "item-dead-creature-goldenpheasant-cock": "Мертвий золотий фазан",
+    "item-dead-creature-goldenpheasant-hen": "Мертва самка золотого фазана",
+    "item-dead-creature-goldenpheasant-chick": "Мертве пташеня золотого фазана",
+    "item-dead-creature-goldenpheasant-cockpoult": "Мертвий молодий золотий фазан",
+    "item-dead-creature-goldenpheasant-henpoult": "Мертва молода самка золотого фазана",
+
+    "item-creature-capercaillie-cock": "Глухар",
+    "item-creature-capercaillie-hen": "Самка глухаря",
+    "item-creature-capercaillie-chick": "Пташеня глухаря",
+    "item-creature-capercaillie-cockpoult": "Молодий Глухар",
+    "item-creature-capercaillie-henpoult": "Молода самка глухаря",
+    "itemdesc-creature-capercaillie-cock": "Глухар",
+    "itemdesc-creature-capercaillie-hen": "Самка глухаря",
+    "itemdesc-creature-capercaillie-chick": "Пташеня глухаря",
+    "itemdesc-creature-capercaillie-cockpoult": "Молодий глухар",
+    "itemdesc-creature-capercaillie-henpoult": "Молода самка глухаря",
+    "item-dead-creature-capercaillie-cock": "Мертвий глухар",
+    "item-dead-creature-capercaillie-hen": "Мертва самка глухаря",
+    "item-dead-creature-capercaillie-chick": "Мертве пташеня глухаря",
+    "item-dead-creature-capercaillie-cockpoult": "Мертвий молодий глухар",
+    "item-dead-creature-capercaillie-henpoult": "Мертва молода самка глухаря",
+  
+    "item-creature-wildturkey-cock": "Дикий індик",
+    "item-creature-wildturkey-hen": "Самка дикого індика",
+    "item-creature-wildturkey-chick": "Пташеня дикого індика",
+    "item-creature-wildturkey-cockpoult": "Молодий дикий індик",
+    "item-creature-wildturkey-henpoult": "Молода самка дикого індика",
+    "itemdesc-creature-wildturkey-cock": "Дикий індик",
+    "itemdesc-creature-wildturkey-hen": "Самка дикого індика",
+    "itemdesc-creature-wildturkey-chick": "Пташеня дикого індика",
+    "itemdesc-creature-wildturkey-cockpoult": "Молодий дикий індик",
+    "itemdesc-creature-wildturkey-henpoult": "Молода самка дикого індика",
+    "item-dead-creature-wildturkey-cock": "Мертвий дикий індик",
+    "item-dead-creature-wildturkey-hen": "Мертва Самка дикого індика",
+    "item-dead-creature-wildturkey-chick": "Мертве пташеня дикого індика",
+    "item-dead-creature-wildturkey-cockpoult": "Мертвий молодий дикий індик",
+    "item-dead-creature-wildturkey-henpoult": "Мертва молода самка дикого індика",
+	
+	"game:item-creature-pheasant-chick": "Пташеня фазана",
+	"game:itemdesc-creature-pheasant-chick": "Пташеня фазана",
+	"game:item-dead-creature-pheasant-chick": "Мертве пташеня фазана",
+
+	"game:item-creature-goldenpheasant-chick": "Пташеня золотого фазана",
+	"game:itemdesc-creature-goldenpheasant-chick": "Пташеня золотого фазана",
+	"game:item-dead-creature-goldenpheasant-chick": "Мертве пташеня золотого фазана",
+
+	"game:item-creature-capercaillie-chick": "Пташеня глухаря",
+	"game:itemdesc-creature-capercaillie-chick": "Пташеня глухаря",
+	"game:item-dead-creature-capercaillie-chick": "Мертве пташеня глухаря",
+
+	"game:item-creature-wildturkey-chick": "Пташеня дикого індика",
+	"game:itemdesc-creature-wildturkey-chick": "Пташеня дикого індика",
+	"game:item-dead-creature-wildturkey-chick": "Мертве пташеня дикого індика",
+
+	"block-nestbox-empty": "Порожнє гніздо",
+	"block-nestbox-1egg": "Гніздо з яйцем",
+	"block-nestbox-2eggs": "Гніздо з двома яйцями",
+	"block-nestbox-3eggs": "Гніздо з трьома яйцями",
+
+	"block-egg-pheasant-1": "Яйце фазана",
+	"block-egg-pheasant-2": "Два яйця фазана",
+	"block-egg-pheasant-3": "Три яйця фазана",
+	"block-egg-pheasant-broken": "Розбите яйце фазана",
+
+	"block-egg-goldenpheasant-1": "Яйце золотого фазана",
+	"block-egg-goldenpheasant-2": "Два яйця золотого фазана",
+	"block-egg-goldenpheasant-3": "Три яйця золотого фазана",
+	"block-egg-goldenpheasant-broken": "Розбите яйце золотого фазана",
+
+	"block-egg-capercaillie-1": "Яйце глухаря",
+	"block-egg-capercaillie-2": "Два яйця глухаря",
+	"block-egg-capercaillie-3": "Три яйця глухаря",
+	"block-egg-capercaillie-broken": "Розбите яйце глухаря",
+
+	"block-egg-wildturkey-1": "Яйце дикого індика",
+	"block-egg-wildturkey-2": "Два яйця дикого індика",
+	"block-egg-wildturkey-3": "Три яйця дикого індика",
+	"block-egg-wildturkey-broken": "Розбите яйце дикого індика",
+
+	"item-egg-pheasant-raw": "Сире яйце фазана",
+	"item-egg-goldenpheasant-raw": "Сире яйце золотого фазана",
+	"item-egg-capercaillie-raw": "Сире яйце глухаря",
+	"item-egg-wildturkey-raw": "Сире яйце дикого індика",
+	
+	"recipeingredient-item-egg-pheasant-raw": "Яйця фазана",
+	"recipeingredient-item-egg-goldenpheasant-raw": "Яйця золотого фазана",
+	"recipeingredient-item-egg-capercaillie-raw": "Яйця глухаря",
+	"recipeingredient-item-egg-wildturkey-raw": "Яйця дикого індика",
+
+	"recipeingredient-item-egg-pheasant-raw-insturmentalcase": "Яйця фазана",
+	"recipeingredient-item-egg-goldenpheasant-raw-insturmentalcase": "Яйця золотого фазана",
+	"recipeingredient-item-egg-capercaillie-raw-insturmentalcase": "Яйця глухаря",
+	"recipeingredient-item-egg-wildturkey-raw-insturmentalcase": "Яйця дикого індика",
+
+	"game:meal-ingredient-soup-primary-egg-pheasant-raw": "Яйце фазана",
+	"game:meal-ingredient-soup-secondary-egg-pheasant-raw": "Яйце фазана",
+	"game:meal-ingredient-soup-primary-egg-goldenpheasant-raw": "Яйце золотого фазана",
+	"game:meal-ingredient-soup-secondary-egg-goldenpheasant-raw": "Яйце золотого фазана",
+	"game:meal-ingredient-soup-primary-egg-capercaillie-raw": "Яйце глухаря",
+	"game:meal-ingredient-soup-secondary-egg-capercaillie-raw": "Яйце глухаря",
+	"game:meal-ingredient-soup-primary-egg-wildturkey-raw": "Яйце дикого індика",
+	"game:meal-ingredient-soup-secondary-egg-wildturkey-raw": "Яйце дикого індика"
+
+}

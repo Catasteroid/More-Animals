@@ -1,0 +1,97 @@
+{
+    enabled: false,
+    code: "deadbird",
+    class: "butcherable",
+    variantgroups: [
+        { code: "species", states: [ "capercaillie", "goldenpheasant", "pheasant", "turkey" ] },
+        { code: "type", states: [ "hen", "cock", "chick" ] },
+        { code: "state", states: [ "dead", "skinned", "bledout", "rotten" ] }
+    ],
+    maxstacksize: 1,
+    behaviors: [ { name: "GroundStorable", properties: { layout: "SingleCenter", collisionBox: { x1: 0.2, y1: 0, z1: 0.2, x2: 0.8, y2: 0.5, z2: 0.8 } } } ],
+    texturesByType: {
+        "*-chick-skinned": { "babychick": { "base": "butchering:item/butchercreatures/animalpoultrymeatbloody" } },
+        "*-chick-bledout": { "babychick": { "base": "butchering:item/butchercreatures/animalpoultrymeatbledout" } },
+        "*-chick-rotten": { "babychick": { "base": "game:block/creature/rot/rot" } },
+        "*-skinned": { "skin": { "base": "butchering:item/butchercreatures/animalpoultrymeatbloody" } },
+        "*-bledout": { "skin": { "base": "butchering:item/butchercreatures/animalpoultrymeatbledout" } },
+        "*-rotten": { "skin": { "base": "game:block/creature/rot/rot" } },
+        "*-chick-dead": { "babychick": { "base": "moreanimals:entity/pheasant/pheasantchick1" } },
+        "deadbird-turkey-*": { "skin": { "base": "moreanimals:entity/wildturkey/turkey{type}1" } },
+        "*": { "skin": { "base": "moreanimals:entity/{species}/{species}{type}1" } },
+    },
+    shapeByType: {
+        "*-chick-*": { base: "butchering:creatures/game/chicken/chicken-baby-dead" },
+        "*-goldenpheasant-hen-dead": { base: "moreanimals:entity/butchering/pheasant-hen-dead" },
+        "*-dead": { base: "moreanimals:entity/butchering/{species}-{type}-dead" },
+        "*": { base: "moreanimals:entity/butchering/gamebird-plucked-dead" }
+    },
+    attributes: {
+        size: 0.5,
+        weightByType: {
+            "*-chick-*": 0,
+            "*": 0.02,
+        },
+        handbookByType: {
+            "*-rotten": {
+                exclude: false
+            },
+            "*": {
+                exclude: true
+            }
+        },
+        hangingShapeByType: {
+            "*-chick-*": { base: "butchering:creatures/game/chicken/chicken-baby-hanging" },
+            "*-goldenpheasant-hen-dead": { base: "moreanimals:entity/butchering/pheasant-hen-hanging" },
+            "*-dead": { base: "moreanimals:entity/butchering/{species}-{type}-hanging" },
+            "*": { base: "moreanimals:entity/butchering/gamebird-plucked-hanging" }
+        },
+        butcheringRewards: [],
+        skinningRewards: [],
+    },
+    storageFlagsByType: {
+        "*-rotten": 1,
+        "*": 2049,
+    },
+    transitionablePropsByType: {
+        "*-rotten": [],
+        "*": [ {
+            type: "perish",
+            freshHours: {
+                avg: 80
+            },
+            transitionHours: {
+                avg: 24
+            },
+            transitionedStack: {
+                type: "item",
+                code: "moreanimals:deadbird-{species}-{type}-rotten"
+            },
+            transitionRatio: 1
+        } ]
+    },
+    creativeinventory: { "general": ["*"], "items": ["*"] },
+    heldTpIdleAnimation: "holdunderarm",
+    guiTransform: {
+        "translation": { "x": 0, "y": 0, "z": 0 },
+        "rotation": { "x": -20, "y": 21, "z": 180 },
+        "origin": { "x": 0.53, "y": 0.35, "z": 0.5 },
+        "scale": 1,
+        "rotate": true
+    },
+    fpHandTransform: {
+        "translation": { "x": 0, "y": 0, "z": 0 },
+        "rotation": { "x": -132, "y": -180, "z": -18 }
+    },
+    tpHandTransform: {
+        "translation": { "x": -0.5, "y": -0.3, "z": -0.7 },
+        "rotation": { "x": -89, "y": -12, "z": 3 },
+        "scale": 0.86
+    },
+    groundTransform: {
+        "translation": { "x": 0, "y": 0, "z": 0 },
+        "rotation": { "x": 180, "y": 33, "z": -180 },
+        "origin": { "x": 0.5, "y": 0, "z": 0.5 },
+        "scale": 4.5
+    }
+}

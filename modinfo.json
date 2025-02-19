@@ -1,0 +1,30 @@
+{
+  "Type": "code",
+  "TextureSize": 32,
+  "Name": "More Animals",
+  "Version": "1.4.0",
+  "Description": "Adds new animals for you to discover, exploit and nurture.",
+  "Website": "",
+  "ModID": "moreanimals",
+  "Authors": [
+    "Catasteroid",
+    "Sekelsta"
+  ],
+  "Contributors": [
+    "macoto_hino",
+    "Th3dilli",
+    "Apache",
+    "Nyuhnyash",
+    "Quentin-QPTech",
+    "Yanazake",
+    "Jay",
+    "AzuliBluespots",
+    "Mokradin"
+  ],
+  "Side": "Universal",
+  "RequiredOnClient": true,
+  "RequiredOnServer": true,
+  "Dependencies": {
+    "game": ""
+  }
+}
