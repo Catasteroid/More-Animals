@@ -1,0 +1,66 @@
+{
+	code: "nestbox",
+	class: "BlockHenbox",
+	entityClass: "BlockNestbox",
+	behaviors: [{ name: "NestboxCollectFrom"}],
+	variantgroups: [
+		{code: "eggCount", states: ["empty", "1egg", "2eggs", "3eggs"]}
+	],
+	attributes: {
+		fullVariant: "3eggs",
+		suitableFor: ["game:chicken-hen","moreanimals:pheasant-hen","moreanimals:goldenpheasant-hen","moreanimals:capercaillie-hen","moreanimals:wildturkey-hen"],
+		eggItemsFor: ["game:egg-chicken-raw","moreanimals:egg-pheasant-raw","moreanimals:egg-goldenpheasant-raw","moreanimals:egg-capercaillie-raw","moreanimals:egg-wildturkey-raw"],
+		handbook: {
+			groupBy: ["nestbox-*"],
+			extraSections: [
+				{ title: "handbooktitle-henbox", text: "moreanimals:handbooktext-henbox" }
+			]
+		}
+	},
+	creativeinventory: { general: ["*"] },
+	shape: {
+		base: "game:block/wood/henbox/henbox-{eggCount}"
+	},
+	resistance: 1,
+	sideopaque: {
+		all: false
+	},
+	sidesolid: {
+		all: false
+	},
+	blockmaterial: "Wood",
+	randomizeRotations: true,
+	sideao: { all: false },
+	lightAbsorption: 0,
+	collisionbox: {x1: 0.25, y1: 0, z1: 0.25, x2: 0.75, y2: 0.08, z2: 0.75},
+	selectionbox: {
+		x1: 0.2, y1: 0, z1: 0.2,
+		x2: .8, y2: .21, z2: .8
+	},
+	dropsbytype:
+	{
+		"*-1egg": [ 
+			{ type: "block", code: "nestbox-empty", quantity: { avg: 1} }
+		],
+		"*-2eggs": [ 			
+			{ type: "block", code: "nestbox-empty", quantity: { avg: 1} } 
+			],
+		"*-3eggs": [ 
+			{ type: "block", code: "nestbox-empty", quantity: { avg: 1} }
+		],
+		"*-empty":[
+			{ type: "block", code: "nestbox-empty", quantity: { avg: 1} }
+		]
+	},
+	tphandTransform: {
+		origin: { x: 0.5, y: 0.5, z: 0 },
+		translation: { x: -1.2, y: -.5, z: .5 },
+		rotation: { x: 0, y: 0, z: 0 },
+		scale: .5
+	},
+	guiTransform: {
+		origin: { x: 0.5, y: 0.15, z: 0.5 },
+		scale: 1.8
+	}
+	
+}

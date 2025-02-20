@@ -1,0 +1,22 @@
+[
+
+    { file: "game:recipes/cooking/scrambledeggs.json", op: "add", path: "/ingredients/0/validStacks/-", value: { type: "item", code: "moreanimals:egg-pheasant-raw",  shapeElement: "bowl/egg/*", textureMapping: ["scrambledegg", "group7"] }, side: "server" },
+    { file: "game:recipes/cooking/scrambledeggs.json", op: "add", path: "/ingredients/0/validStacks/-", value: { type: "item", code: "moreanimals:egg-goldenpheasant-raw",  shapeElement: "bowl/egg/*", textureMapping: ["scrambledegg", "group7"] }, side: "server" },
+    { file: "game:recipes/cooking/scrambledeggs.json", op: "add", path: "/ingredients/0/validStacks/-", value: { type: "item", code: "moreanimals:egg-capercaillie-raw",  shapeElement: "bowl/egg/*", textureMapping: ["scrambledegg", "group7"] }, side: "server" },
+    { file: "game:recipes/cooking/scrambledeggs.json", op: "add", path: "/ingredients/0/validStacks/-", value: { type: "item", code: "moreanimals:egg-wildturkey-raw",  shapeElement: "bowl/egg/*", textureMapping: ["scrambledegg", "group7"] }, side: "server" },
+
+    { file: "game:recipes/cooking/soup.json", op: "add", path: "/ingredients/4/validStacks/-", value: { type: "item", code: "moreanimals:egg-pheasant-raw", shapeElement: "bowl/meat/*" }, side: "server" },
+    { file: "game:recipes/cooking/soup.json", op: "add", path: "/ingredients/4/validStacks/-", value: { type: "item", code: "moreanimals:egg-goldenpheasant-raw", shapeElement: "bowl/meat/*" }, side: "server" },
+    { file: "game:recipes/cooking/soup.json", op: "add", path: "/ingredients/4/validStacks/-", value: { type: "item", code: "moreanimals:egg-capercaillie-raw", shapeElement: "bowl/meat/*" }, side: "server" },
+    { file: "game:recipes/cooking/soup.json", op: "add", path: "/ingredients/4/validStacks/-", value: { type: "item", code: "moreanimals:egg-wildturkey-raw", shapeElement: "bowl/meat/*" }, side: "server" },
+
+    { file: "game:recipes/cooking/meatystew.json", op: "add", path: "/ingredients/1/validStacks/-", value: { type: "item", code: "moreanimals:egg-pheasant-raw",  shapeElement: "bowl/egg/*" }, side: "server" },
+    { file: "game:recipes/cooking/meatystew.json", op: "add", path: "/ingredients/1/validStacks/-", value: { type: "item", code: "moreanimals:egg-goldenpheasant-raw", shapeElement: "bowl/egg/*" }, side: "server" },
+    { file: "game:recipes/cooking/meatystew.json", op: "add", path: "/ingredients/1/validStacks/-", value: { type: "item", code: "moreanimals:egg-capercaillie-raw", shapeElement: "bowl/egg/*" }, side: "server" },
+    { file: "game:recipes/cooking/meatystew.json", op: "add", path: "/ingredients/1/validStacks/-", value: { type: "item", code: "moreanimals:egg-wildturkey-raw", shapeElement: "bowl/egg/*" }, side: "server" },    
+    { file: "game:recipes/cooking/meatystew.json", op: "add", path: "/ingredients/2/validStacks/-", value: { type: "item", code: "moreanimals:egg-pheasant-raw", shapeElement: "bowl/egg2/*" }, side: "server" },
+    { file: "game:recipes/cooking/meatystew.json", op: "add", path: "/ingredients/2/validStacks/-", value: { type: "item", code: "moreanimals:egg-goldenpheasant-raw", shapeElement: "bowl/egg2/*" }, side: "server" },
+    { file: "game:recipes/cooking/meatystew.json", op: "add", path: "/ingredients/2/validStacks/-", value: { type: "item", code: "moreanimals:egg-capercaillie-raw", shapeElement: "bowl/egg2/*" }, side: "server" },
+    { file: "game:recipes/cooking/meatystew.json", op: "add", path: "/ingredients/2/validStacks/-", value: { type: "item", code: "moreanimals:egg-wildturkey-raw", shapeElement: "bowl/egg2/*" }, side: "server" }
+
+]

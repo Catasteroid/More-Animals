@@ -1,2 +1,5 @@
 obj/
 bin/
+Build/Releases/
+Build/CakeBuild/obj/
+Build/CakeBuild/bin/

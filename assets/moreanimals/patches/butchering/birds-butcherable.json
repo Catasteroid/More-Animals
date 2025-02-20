@@ -1,0 +1,192 @@
+[
+    {
+        file: "moreanimals:itemtypes/butchering/deadbird.json",
+        op: "add",
+        path: "/enabled",
+        value: true,
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+
+
+
+    {
+        file: "moreanimals:entities/capercaillie-chick.json",
+        op: "add",
+        path: "/server/behaviors/-",
+        value: { code: "butcherable", item: "moreanimals:deadbird-capercaillie-chick-dead" },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/capercaillie-chick.json",
+        op: "add",
+        path: "/client/behaviors/-",
+        value: { code: "butcherable", item: "moreanimals:deadbird-capercaillie-chick-dead" },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/goldenpheasant-chick.json",
+        op: "add",
+        path: "/server/behaviors/-",
+        value: { code: "butcherable", item: "moreanimals:deadbird-goldenpheasant-chick-dead" },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/goldenpheasant-chick.json",
+        op: "add",
+        path: "/client/behaviors/-",
+        value: { code: "butcherable", item: "moreanimals:deadbird-goldenpheasant-chick-dead" },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/pheasant-chick.json",
+        op: "add",
+        path: "/server/behaviors/-",
+        value: { code: "butcherable", item: "moreanimals:deadbird-pheasant-chick-dead" },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/pheasant-chick.json",
+        op: "add",
+        path: "/client/behaviors/-",
+        value: { code: "butcherable", item: "moreanimals:deadbird-pheasant-chick-dead" },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/wildturkey-chick.json",
+        op: "add",
+        path: "/server/behaviors/-",
+        value: { code: "butcherable", item: "moreanimals:deadbird-turkey-chick-dead" },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/wildturkey-chick.json",
+        op: "add",
+        path: "/client/behaviors/-",
+        value: { code: "butcherable", item: "moreanimals:deadbird-turkey-chick-dead" },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+
+
+
+    {
+        file: "moreanimals:entities/capercaillie.json",
+        op: "add",
+        path: "/server/behaviors/-",
+        value: {
+            code: "butcherable", 
+            itemByType: {
+                "*-cock*": "moreanimals:deadbird-capercaillie-cock-dead",
+                "*-hen*": "moreanimals:deadbird-capercaillie-hen-dead",
+            } 
+        },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/capercaillie.json",
+        op: "add",
+        path: "/client/behaviors/-",
+        value: {
+            code: "butcherable", 
+            itemByType: {
+                "*-cock*": "moreanimals:deadbird-capercaillie-cock-dead",
+                "*-hen*": "moreanimals:deadbird-capercaillie-hen-dead",
+            } 
+        },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/goldenpheasant.json",
+        op: "add",
+        path: "/server/behaviors/-",
+        value: {
+            code: "butcherable", 
+            itemByType: {
+                "*-cock*": "moreanimals:deadbird-goldenpheasant-cock-dead",
+                "*-hen*": "moreanimals:deadbird-goldenpheasant-hen-dead",
+            } 
+        },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/goldenpheasant.json",
+        op: "add",
+        path: "/client/behaviors/-",
+        value: {
+            code: "butcherable", 
+            itemByType: {
+                "*-cock*": "moreanimals:deadbird-goldenpheasant-cock-dead",
+                "*-hen*": "moreanimals:deadbird-goldenpheasant-hen-dead",
+            } 
+        },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/pheasant.json",
+        op: "add",
+        path: "/server/behaviors/-",
+        value: {
+            code: "butcherable", 
+            itemByType: {
+                "*-cock*": "moreanimals:deadbird-pheasant-cock-dead",
+                "*-hen*": "moreanimals:deadbird-pheasant-hen-dead",
+            } 
+        },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/pheasant.json",
+        op: "add",
+        path: "/client/behaviors/-",
+        value: {
+            code: "butcherable", 
+            itemByType: {
+                "*-cock*": "moreanimals:deadbird-pheasant-cock-dead",
+                "*-hen*": "moreanimals:deadbird-pheasant-hen-dead",
+            } 
+        },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/wildturkey.json",
+        op: "add",
+        path: "/server/behaviors/-",
+        value: {
+            code: "butcherable", 
+            itemByType: {
+                "*-cock*": "moreanimals:deadbird-turkey-cock-dead",
+                "*-hen*": "moreanimals:deadbird-turkey-hen-dead",
+            } 
+        },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+    {
+        file: "moreanimals:entities/wildturkey.json",
+        op: "add",
+        path: "/client/behaviors/-",
+        value: {
+            code: "butcherable", 
+            itemByType: {
+                "*-cock*": "moreanimals:deadbird-turkey-cock-dead",
+                "*-hen*": "moreanimals:deadbird-turkey-hen-dead",
+            } 
+        },
+        side: "server",
+        dependsOn: [ { modid: "butchering" } ]
+    },
+]

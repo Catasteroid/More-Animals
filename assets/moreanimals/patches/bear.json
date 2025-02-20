@@ -1,0 +1,16 @@
+[
+	{ 
+        file: "game:entities/land/bear.json", 
+        op: "addeach", 
+        path: "/server/behaviors/9/aitasks/0/entityCodes/-", 
+		value: ["pheasant-*", "goldenpheasant-*", "capercaillie-*", "wildturkey-*" ], 
+        side: "server" 
+    },
+	{ 
+        file: "game:entities/land/bear.json", 
+        op: "addeach", 
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*/-", 
+		value: ["pheasant-*", "goldenpheasant-*", "capercaillie-*", "wildturkey-*" ], 
+        side: "server" 
+    },
+]

@@ -1,0 +1,167 @@
+{
+    code: "creature",
+    class: "ItemCreature",
+    maxstacksize: 64,
+    variantgroups: [
+        { code: "type", states: [
+            "pheasant-chick", "pheasant-cockpoult", "pheasant-henpoult", "pheasant-cock", "pheasant-hen",
+            "goldenpheasant-chick", "goldenpheasant-cockpoult", "goldenpheasant-henpoult", "goldenpheasant-cock", "goldenpheasant-hen",
+            "capercaillie-chick", "capercaillie-cockpoult", "capercaillie-henpoult", "capercaillie-cock", "capercaillie-hen",
+            "wildturkey-chick", "wildturkey-cockpoult", "wildturkey-henpoult", "wildturkey-cock", "wildturkey-hen"
+        ] }
+    ],
+    shapeByType: {
+        "*-chick": {
+            "base": "entity/land/pheasant-chick"
+        },
+        "*-pheasant-hen*": {
+            "base": "entity/land/pheasant-hen"
+        },
+        "*-pheasant-cock*": {
+            "base": "entity/land/pheasant-cock"
+        },
+
+        "*-goldenpheasant-hen*": {
+            "base": "entity/land/pheasant-hen"
+        },
+        "*-goldenpheasant-cock*": {
+            "base": "entity/land/goldenpheasant-cock"
+        },   
+
+        "*-capercaillie-hen*": {
+            "base": "entity/land/capercaillie-hen"
+        },
+        "*-capercaillie-cock*": {
+            "base": "entity/land/capercaillie-cock"
+        },   
+
+        "*-wildturkey-hen*": {
+            "base": "entity/land/wildturkey-hen"
+        },
+        "*-wildturkey-cock*": {
+            "base": "entity/land/wildturkey-cock"
+        },   
+        "*": { "base": "entity/land/{type}" }
+    },
+    texturesByType: {
+        "*-goldenpheasant-hen*": { "skin": { base: "moreanimals:entity/goldenpheasant/goldenpheasanthen1" } },
+    },
+    creativeinventory: { "general": ["*"], "items": ["*"], "creatures": ["*"] },
+    materialDensity: 600,
+    guiTransformByType: {
+        "creature-*-chick": {
+            rotate: true,
+            translation: { x: 2, y: 0, z: 0 },
+            rotation: { x: -11, y: -15, z: -171 },
+            origin: { x: 0.5, y: 0.15, z: 0.5 },
+            scale: 4.5
+        },
+        "creature-*-henpoult":     {
+            rotate: true,
+            translation: { x: 0, y: 3, z: 0 },
+            rotation: { x: -7, y: -37, z: -180 },
+            origin: { x: 0.5, y: 0.32, z: 0.5 },
+            scale: 2.3599
+        },
+        "creature-*-cockpoult": {
+            rotate: true,    
+            translation: { x: 6, y: 6, z: 0 },
+            rotation: { x: -7, y: -37, z: -180 },
+            origin: { x: 0.5, y: 0.32, z: 0.5 },
+            scale: 2.14
+        },
+        "creature-*-hen":     {
+            rotate: true,
+            translation: { x: 0, y: 3, z: 0 },
+            rotation: { x: -7, y: -37, z: -180 },
+            origin: { x: 0.5, y: 0.32, z: 0.5 },
+            scale: 2.3599
+        },
+        "creature-*-cock": {
+            rotate: true,    
+            translation: { x: 6, y: 6, z: 0 },
+            rotation: { x: -7, y: -37, z: -180 },
+            origin: { x: 0.5, y: 0.32, z: 0.5 },
+            scale: 2.14
+        },
+        "*": {
+            rotate: true,    
+            translation: { x: 6, y: 6, z: 0 },
+            rotation: { x: -7, y: -37, z: -180 },
+            origin: { x: 0.5, y: 0.32, z: 0.5 },
+            scale: 2.14
+        }
+    },
+    
+    tpHandTransformByType: {
+        "creature-*-chick": {
+            translation: { x: -0.6, y: -0.1, z: -0.5 },
+            rotation: { x: -156, y: -19, z: -82 },
+            origin: { x: 0.5, y: 0.1, z: 0.5 },
+            scale: 0.9
+        },
+        "creature-*-henpoult": {
+            translation: { x: -0.4, y: 0, z: -0.5 },
+            rotation: { x: -160, y: -26, z: -90 },
+            origin: { x: 0.5, y: 0.1, z: 0.5 },
+            scale: 0.92
+        },
+        "creature-*-cockpoult": {
+            translation: { x: -0.3, y: 0, z: -0.5 },
+            rotation: { x: -158, y: -25, z: -87 },
+            origin: { x: 0.5, y: 0.1, z: 0.5 },
+            scale: 0.85
+        },
+        "creature-*-hen": {
+            translation: { x: -0.4, y: 0, z: -0.5 },
+            rotation: { x: -160, y: -26, z: -90 },
+            origin: { x: 0.5, y: 0.1, z: 0.5 },
+            scale: 0.92
+        },
+        "creature-*-cock": {
+            translation: { x: -0.3, y: 0, z: -0.5 },
+            rotation: { x: -158, y: -25, z: -87 },
+            origin: { x: 0.5, y: 0.1, z: 0.5 },
+            scale: 0.85
+        },
+        "*": {
+            translation: { x: -0.3, y: 0, z: -0.5 },
+            rotation: { x: -158, y: -25, z: -87 },
+            origin: { x: 0.5, y: 0.1, z: 0.5 },
+            scale: 0.85
+        }
+    },
+    
+    fpHandTransformByType: {
+        "creature-*-chick": {
+            translation: { x: 0.5, y: 0.3, z: 0 },
+            rotation: { x: -180, y: -119, z: -180 },
+            scale: 2
+        },
+        "creature-*-henpoult": {
+            translation: { x: 0.4, y: 0.1, z: 0 },
+            rotation: { x: -180, y: -119, z: -180 },
+            scale: 2
+        },
+        "creature-*-cockpoult": {
+            translation: { x: 0.4, y: 0.1, z: 0 },
+            rotation: { x: -180, y: -119, z: -180 },
+            scale: 2
+        },
+        "creature-*-hen": {
+            translation: { x: 0.4, y: 0.1, z: 0 },
+            rotation: { x: -180, y: -119, z: -180 },
+            scale: 2
+        },
+        "creature-*-cock": {
+            translation: { x: 0.4, y: 0.1, z: 0 },
+            rotation: { x: -180, y: -119, z: -180 },
+            scale: 2
+        },
+        "*": {
+            translation: { x: 0.4, y: 0.1, z: 0 },
+            rotation: { x: -180, y: -119, z: -180 },
+            scale: 2
+        }
+    }
+}
